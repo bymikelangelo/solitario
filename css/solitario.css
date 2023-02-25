@@ -1,0 +1,97 @@
+/**
+	Especificaciones CSS para el juego del solitario 
+*/
+
+/* /*** !!!!!!!!!!!!!!!!!!! CÓDIGO !!!!!!!!!!!!!!!!!!!! 
+	Completar los estilos que faltan y modificar al gusto del alumno
+**/
+body {background-color: #F8D3C4;}
+
+/* Encabezado */
+header{ height: 120px;}
+
+/* Logo a la derecha */
+.logo {float: right;}
+
+/* Todos los contadores estarán ubicados en la parte inferior 
+   derecha (position absolute) de los respectivos tapetes (position relative).
+*/
+.contador {
+	position: absolute;
+	bottom: 0px;
+	right: 3px;
+}
+
+/* Ubicación botón reinciar */
+#reset {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	background-color: #E65014;
+}
+
+/* Centrado del título y color */
+h1#titulo {
+	text-align: center;
+	color: #E65014;
+	font-family: 'Gajraj One', cursive;
+	font-size: 80px;
+}
+
+/* Centrado de los marcadores de tiempo y movimientos */
+h2#marcadores{ 
+	text-align: center; 
+	font-family: 'Shantell Sans', cursive;
+	font-size: xxx-large;
+}
+
+/* Mesa que contiene a los tapetes centrados */
+div#mesa{
+	text-align: center;
+	margin:20px;
+}
+
+/* Todos los tapetes con position relative para que
+   los respectivos mazos (arrays de <img>) puedan
+   posicionarse de manera absoluta respecto a ellos */
+div.tapete{
+	display: inline-block;
+	position: relative;
+	margin: 10px;
+}
+
+/* Tamaño y posición de las cartas*/ 
+.carta {
+	position: absolute;
+	width: 80px;
+}
+
+/* Dimensiones y color de fondo para el tapete inicial */
+div.tapete#inicial{
+	width: 355px;
+	height: 355px;			
+	background-color:#AC3C0F;
+	border-radius: 5px;
+	color: white;
+	
+}
+
+/* Dimensiones para todos los tapetes salvo el inicial */
+div.tapete:not(#inicial){				
+	height: 125px;
+	width: 100px;
+}
+
+/* Color de fondo para el tapete de las cartas sobrantes */
+div.tapete#sobrantes{
+	background-color:#561E07;
+	color: white;
+	border-radius: 10px;
+}
+
+/* Color de fondo de los tapetes receptores */
+div.tapete.receptor{
+	background-color:#B67E67;
+	border-radius: 10px;
+}
