@@ -1,8 +1,8 @@
 /***** INICIO DECLARACIÓN DE VARIABLES GLOBALES *****/
 
 const PALOS = ["ova", "cua", "hex", "cir"];
-//const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const NUMEROS = [12];
+const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+// const NUMEROS = [9, 10, 11, 12];
 
 // paso (top y left) en pixeles de una carta a la siguiente en un mazo
 const MARGEN_ENTRE_CARTA = 5;
