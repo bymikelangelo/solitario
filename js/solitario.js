@@ -1,8 +1,8 @@
 /***** INICIO DECLARACIÓN DE VARIABLES GLOBALES *****/
 
 const PALOS = ["ova", "cua", "hex", "cir"];
-const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-//const NUMEROS = [9, 10, 11, 12];
+//const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const NUMEROS = [12];
 
 // paso (top y left) en pixeles de una carta a la siguiente en un mazo
 const MARGEN_ENTRE_CARTA = 5;
@@ -378,15 +378,10 @@ function validarMovimientoEnTapeteRepector(mazoDestino, currentCartaHtml) {
 }
 
 function finalizarJugadaEfectuada() {
+    let hasGanado = false;
     if (mazo_inicial.length <= 0) {
         if (mazo_sobrantes <= 0) {
-            alert(
-                `ENHORABUENA!!!, has ganado la partida.
-                Movimientos efectuados =  ${cont_movimientos.innerHTML}
-                Tiempo total = ${cont_tiempo.innerHTML}`
-            );
-
-            pararTiempo();
+            hasGanado = true;
         } else {
             moverMazoSobranteAInicial();
         }
@@ -396,7 +391,17 @@ function finalizarJugadaEfectuada() {
 
     actualizarContadores();
 
-    activarPrimeraCarta();
+    if (!hasGanado) {
+        activarPrimeraCarta();
+    } else {
+        alert(
+            `ENHORABUENA!!!, has ganado la partida.
+            Movimientos efectuados =  ${cont_movimientos.innerHTML}
+            Tiempo total = ${cont_tiempo.innerHTML}`
+        );
+
+        pararTiempo();
+    }
 }
 
 function moverMazoSobranteAInicial() {
